@@ -32,6 +32,10 @@ namespace ideal_rotary_phone
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
             services.AddSingleton<HttpClient>();
+            services.AddHttpClient("local", c =>
+            {
+                c.BaseAddress = new Uri("http://localhost:3000/");
+            });
             services.AddBootstrapCss();
         }
 
